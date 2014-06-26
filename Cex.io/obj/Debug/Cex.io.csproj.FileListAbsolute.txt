@@ -1,5 +1,0 @@
-C:\Users\administrator\Documents\Visual Studio 2012\Projects\Cex.io-Api-Client\src\Cex.io\bin\Debug\Cex.io.dll
-C:\Users\administrator\Documents\Visual Studio 2012\Projects\Cex.io-Api-Client\src\Cex.io\bin\Debug\Cex.io.pdb
-C:\Users\administrator\Documents\Visual Studio 2012\Projects\Cex.io-Api-Client\src\Cex.io\obj\Debug\Cex.io.csprojResolveAssemblyReference.cache
-C:\Users\administrator\Documents\Visual Studio 2012\Projects\Cex.io-Api-Client\src\Cex.io\obj\Debug\Cex.io.dll
-C:\Users\administrator\Documents\Visual Studio 2012\Projects\Cex.io-Api-Client\src\Cex.io\obj\Debug\Cex.io.pdb

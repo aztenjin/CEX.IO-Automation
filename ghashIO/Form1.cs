@@ -196,11 +196,11 @@ namespace ghashIO
 			_elapsedHours = _stopwatch.Elapsed.TotalHours;
 			_callsPerHour = _apiCallCount/_elapsedHours;
 
-			if (_callsPerHour > 500)
+			if (_callsPerHour > 3001)
 				timer1.Interval = timer1.Interval + 100;
 
-			if (_callsPerHour < 500 && timer1.Interval > 8000)
-				timer1.Interval = timer1.Interval = 8000;
+			if (_callsPerHour < 3000 && timer1.Interval > 3000)
+				timer1.Interval = timer1.Interval = 3000;
 
 			UpdateUi();
 
@@ -231,8 +231,11 @@ namespace ghashIO
 			lblDvcValue.Text = _balance.DVC.Available.ToString();
 			lblGhsValue.Text = _balance.GHS.Available.ToString();
 			lblApiCallCount.Text = string.Format("Api Calls: {0}", _apiCallCount);
-			lblPurchasedBtc.Text = string.Format("Ghs Purchased: {0}", _ghsPurchased);
+			lblPurchasedBtc.Text = string.Format("GHS Purchased: {0}", _ghsPurchased);
+			if (_elapsedHours > 0)
+			{
 			lblghsPerHour.Text = string.Format("GHS Per Hour: {0}", Math.Round((_ghsPurchased/(decimal) _elapsedHours), 8));
+			}
 			lblLastUpdated.Text = @"Last update: " + DateTime.Now;
 			richTextBox1.ScrollToCaret();
 
@@ -328,10 +331,6 @@ namespace ghashIO
 			lblOrdersPerHour.Text = string.Format("Orders Per Hour: {0}", Math.Round(_orderCount/_elapsedHours, 2));
 		}
 
-		private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-		{
-
-		}
 
 		private void timer2_Tick_1(object sender, EventArgs e)
 		{
