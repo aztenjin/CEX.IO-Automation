@@ -196,11 +196,11 @@ namespace ghashIO
 			_elapsedHours = _stopwatch.Elapsed.TotalHours;
 			_callsPerHour = _apiCallCount/_elapsedHours;
 
-			if (_callsPerHour > 500)
+			if (_callsPerHour > 3001)
 				timer1.Interval = timer1.Interval + 100;
 
-			if (_callsPerHour < 500 && timer1.Interval > 8000)
-				timer1.Interval = timer1.Interval = 8000;
+			if (_callsPerHour < 3000 && timer1.Interval > 3000)
+				timer1.Interval = timer1.Interval = 3000;
 
 			UpdateUi();
 

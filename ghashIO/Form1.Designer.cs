@@ -90,7 +90,7 @@
 			this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.richTextBox1.Location = new System.Drawing.Point(3, 3);
 			this.richTextBox1.Name = "richTextBox1";
-			this.richTextBox1.Size = new System.Drawing.Size(1188, 522);
+			this.richTextBox1.Size = new System.Drawing.Size(403, 223);
 			this.richTextBox1.TabIndex = 0;
 			this.richTextBox1.Text = "";
 			// 
@@ -138,7 +138,7 @@
 			this.tabControl1.Location = new System.Drawing.Point(0, 0);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(495, 285);
+			this.tabControl1.Size = new System.Drawing.Size(417, 255);
 			this.tabControl1.TabIndex = 9;
 			// 
 			// tabPage1
@@ -151,7 +151,7 @@
 			this.tabPage1.Location = new System.Drawing.Point(4, 22);
 			this.tabPage1.Name = "tabPage1";
 			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage1.Size = new System.Drawing.Size(487, 259);
+			this.tabPage1.Size = new System.Drawing.Size(409, 229);
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "Trading Stats";
 			this.tabPage1.UseVisualStyleBackColor = true;
@@ -162,7 +162,7 @@
 			this.tabPage2.Location = new System.Drawing.Point(4, 22);
 			this.tabPage2.Name = "tabPage2";
 			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage2.Size = new System.Drawing.Size(487, 259);
+			this.tabPage2.Size = new System.Drawing.Size(409, 229);
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "Settings";
 			this.tabPage2.UseVisualStyleBackColor = true;
@@ -173,7 +173,7 @@
 			this.tabPage3.Location = new System.Drawing.Point(4, 22);
 			this.tabPage3.Name = "tabPage3";
 			this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage3.Size = new System.Drawing.Size(1194, 528);
+			this.tabPage3.Size = new System.Drawing.Size(409, 229);
 			this.tabPage3.TabIndex = 2;
 			this.tabPage3.Text = "Log";
 			this.tabPage3.UseVisualStyleBackColor = true;
@@ -516,6 +516,7 @@
             0,
             0,
             393216});
+			this.udMaintanMinBalance.ValueChanged += new System.EventHandler(this.udMaintanMinBalance_ValueChanged);
 			// 
 			// groupBox4
 			// 
@@ -551,12 +552,12 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(495, 285);
+			this.ClientSize = new System.Drawing.Size(417, 255);
 			this.Controls.Add(this.tabControl1);
 			this.Controls.Add(this.button2);
 			this.Controls.Add(this.button1);
 			this.Name = "Form1";
-			this.Text = "Form1";
+			this.Text = "CEX.IO Auto Trader";
 			this.Load += new System.EventHandler(this.Form1_Load);
 			this.tabControl1.ResumeLayout(false);
 			this.tabPage1.ResumeLayout(false);
