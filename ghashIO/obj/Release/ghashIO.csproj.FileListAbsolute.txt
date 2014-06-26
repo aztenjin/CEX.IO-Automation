@@ -12,3 +12,11 @@ C:\Users\administrator\Documents\Visual Studio 2012\Projects\ghashIO\ghashIO\obj
 C:\CEX\ghashIO\bin\Release\ghashIO.exe.config
 C:\CEX\ghashIO\obj\Release\ghashIO.exe
 C:\CEX\ghashIO\obj\Release\ghashIO.pdb
+C:\CEX\ghashIO\bin\Release\ghashIO.exe
+C:\CEX\ghashIO\bin\Release\ghashIO.pdb
+C:\CEX\ghashIO\bin\Release\Cex.io.dll
+C:\CEX\ghashIO\bin\Release\Cex.io.pdb
+C:\CEX\ghashIO\obj\Release\ghashIO.csprojResolveAssemblyReference.cache
+C:\CEX\ghashIO\obj\Release\ghashIO.Form1.resources
+C:\CEX\ghashIO\obj\Release\ghashIO.Properties.Resources.resources
+C:\CEX\ghashIO\obj\Release\ghashIO.csproj.GenerateResource.Cache
