@@ -103,7 +103,7 @@ namespace Nextmethod.Cex
 
         public static implicit operator long(TradeId value)
         {
-            if (value == null) throw new ArgumentNullException("value");
+            //if (value == null) throw new ArgumentNullException("value");
             return Convert.ToInt64(value.Id);
         }
 

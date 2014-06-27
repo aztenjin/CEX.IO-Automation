@@ -23,15 +23,39 @@ namespace ghashIO.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0.0000001")]
-        public decimal MaintainBalance {
+        public decimal keepBtcBalance {
             get {
-                return ((decimal)(this["MaintainBalance"]));
+                return ((decimal)(this["keepBtcBalance"]));
             }
-            set {
-                this["MaintainBalance"] = value;
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("get me")]
+        public string apiUserName {
+            get {
+                return ((string)(this["apiUserName"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("get me")]
+        public string apiKey {
+            get {
+                return ((string)(this["apiKey"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("get me")]
+        public string apiSecret {
+            get {
+                return ((string)(this["apiSecret"]));
             }
         }
     }

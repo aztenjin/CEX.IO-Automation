@@ -9,3 +9,14 @@ C:\Users\administrator\Documents\Visual Studio 2012\Projects\ghashIO\ghashIO\obj
 C:\Users\administrator\Documents\Visual Studio 2012\Projects\ghashIO\ghashIO\obj\Debug\ghashIO.csproj.GenerateResource.Cache
 C:\Users\administrator\Documents\Visual Studio 2012\Projects\ghashIO\ghashIO\obj\Debug\ghashIO.exe
 C:\Users\administrator\Documents\Visual Studio 2012\Projects\ghashIO\ghashIO\obj\Debug\ghashIO.pdb
+C:\CEX\CEX.IO-Automation\ghashIO\bin\Debug\ghashIO.exe.config
+C:\CEX\CEX.IO-Automation\ghashIO\obj\Debug\ghashIO.exe
+C:\CEX\CEX.IO-Automation\ghashIO\obj\Debug\ghashIO.pdb
+C:\CEX\CEX.IO-Automation\ghashIO\bin\Debug\ghashIO.exe
+C:\CEX\CEX.IO-Automation\ghashIO\bin\Debug\ghashIO.pdb
+C:\CEX\CEX.IO-Automation\ghashIO\bin\Debug\Cex.io.dll
+C:\CEX\CEX.IO-Automation\ghashIO\bin\Debug\Cex.io.pdb
+C:\CEX\CEX.IO-Automation\ghashIO\obj\Debug\ghashIO.csprojResolveAssemblyReference.cache
+C:\CEX\CEX.IO-Automation\ghashIO\obj\Debug\ghashIO.Form1.resources
+C:\CEX\CEX.IO-Automation\ghashIO\obj\Debug\ghashIO.Properties.Resources.resources
+C:\CEX\CEX.IO-Automation\ghashIO\obj\Debug\ghashIO.csproj.GenerateResource.Cache

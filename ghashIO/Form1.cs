@@ -1,17 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Windows.Forms;
 using Nextmethod.Cex;
 using Nextmethod.Cex.Exceptions;
+using ghashIO.Properties;
 
 
 namespace ghashIO
 {
 	public partial class Form1 : Form
 	{
-		private string _hashIoKey;
-		private string _hashIoSecret;
+		private string _cexApiKey;
+		private string _cexApiSecret;
 		private string _cexUserName;
 		private ApiCredentials _cexApiCredentials;
 		private CexApi _cexClient;
@@ -28,6 +30,7 @@ namespace ghashIO
 		private decimal _ghsPurchased;
 		private decimal _btcEarned;
 		private bool _firstRun;
+		private int _canceledOrders;
 
 
 		public Form1()
@@ -37,12 +40,13 @@ namespace ghashIO
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
+			//LoadSettings();
 			_firstRun = true;
-			_apiCallCount = 0;
-			_hashIoKey = "IB448l8aZIeYbtVOQUwA4EctWEU";
-			_hashIoSecret = "QjO5Ll0ZKBPQgecq7sPQBGRPTI";
+			_cexApiKey = "o3qCw0mySJkWNisqP6di8t9Dk";
+			_cexApiSecret = "SMtI8IFsb2TbPfz9yTJlHNPhK2s";
 			_cexUserName = "tenjin";
-			_cexApiCredentials = new ApiCredentials(_cexUserName, _hashIoKey, _hashIoSecret);
+			_apiCallCount = 0;
+			_cexApiCredentials = new ApiCredentials(_cexUserName, _cexApiKey, _cexApiSecret);
 			_cexClient = new CexApi(_cexApiCredentials);
 
 			richTextBox1.Text = @"Started @ " + DateTime.Now + Environment.NewLine;
@@ -50,11 +54,37 @@ namespace ghashIO
 			_stopwatch.Start();
 			_balance = new Balance();
 
-			udMaintanMinBalance.Value = (decimal) Properties.Settings.Default["MaintainBalance"];
+			
 
 			button1_Click(null, null);
 		}
 
+/*
+		private void LoadSettings()
+		{
+			//api credentials
+			
+			tbApiUserName.Text = (string) Settings.Default["apiUserName"];
+			tbApiKey.Text = (string) Settings.Default["apiKey"];
+			tbApiSecret.Text = (string) Settings.Default["apiSecret"];
+			_cexUserName = tbApiUserName.Text;
+			_cexApiKey = tbApiKey.Text;
+			_cexApiSecret = tbApiSecret.Text;
+
+
+
+			udMaintanMinBalance.Value = (decimal)Settings.Default["keepBtcBalance"];
+			
+		}
+*/
+		private void SaveSettings(object sender, EventArgs e)
+		{
+			Settings.Default["keepBtcBalance"] = udMaintanMinBalance.Value;
+			Settings.Default["apiUserName"] = tbApiUserName.Text;
+			Settings.Default["apiKey"] = tbApiKey.Text;
+			Settings.Default["apiSecret"] = tbApiSecret.Text;
+			Settings.Default.Save();
+		}
 		private async void button1_Click(object sender, EventArgs e)
 		{
 			try
@@ -98,6 +128,8 @@ namespace ghashIO
 			Order order = new Order();
 			OrderBook orderBook = await _cexClient.OrderBook(pair);
 			_apiCallCount = ++_apiCallCount;
+			
+			
 			IEnumerable<OrderBookOrder> bids = orderBook.Bids;
 			order.Price = ((OrderBookOrder[]) (bids))[0].Price;
 
@@ -332,15 +364,57 @@ namespace ghashIO
 		}
 
 
-		private void timer2_Tick_1(object sender, EventArgs e)
+		private async void timer2_Tick_1(object sender, EventArgs e)
 		{
+			List<SymbolPair> symbolPairs =
+				new List<SymbolPair>
+					{
+						SymbolPair.GHS_BTC,
+						SymbolPair.GHS_NMC
+					};
+			int openOrderCount = 0;
+			foreach (SymbolPair symbolPair in symbolPairs)
+			{
+				
+				try
+				{
+					IEnumerable<OpenOrder> openOrders = await _cexClient.OpenOrders(symbolPair);
+					var openOrderList = openOrders as IList<OpenOrder> ?? openOrders.ToList();
+					if (openOrders != null) openOrderCount = openOrderCount + openOrderList.Count();
 
+					_apiCallCount = ++_apiCallCount;
+
+					foreach (OpenOrder openOrder in openOrderList.Where(openOrder => openOrder.Time.ToLocalDateTime() < DateTime.Now.AddMinutes(-5)))
+					{
+						bool success = await _cexClient.CancelOrder(openOrder.Id);
+						_apiCallCount = ++_apiCallCount;
+						
+						if (!success) continue;
+						_canceledOrders = ++_canceledOrders;
+						richTextBox1.AppendText("Removed order: " + openOrder.Id + Environment.NewLine);
+					}
+
+
+
+				}
+				catch (Exception ex)
+				{
+
+					Console.WriteLine(@"opps{0}", ex);
+				}
+			}
+			label8.Text = string.Format("Open Orders: {0}", openOrderCount);
+			label11.Text = string.Format("{0} Cancled Orders", _canceledOrders);
 		}
 
-		private void udMaintanMinBalance_ValueChanged(object sender, EventArgs e)
+		private void btnSaveSettings_Click(object sender, EventArgs e)
 		{
-			Properties.Settings.Default["MaintainBalance"] = udMaintanMinBalance.Value;
-			Properties.Settings.Default.Save();
+			SaveSettings(null, null);
+		}
+
+		private void button3_Click_1(object sender, EventArgs e)
+		{
+			timer2_Tick_1(null, null);
 		}
 	}
 }
