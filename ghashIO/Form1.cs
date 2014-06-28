@@ -80,9 +80,6 @@ namespace ghashIO
 		private void SaveSettings(object sender, EventArgs e)
 		{
 			Settings.Default["keepBtcBalance"] = udMaintanMinBalance.Value;
-			Settings.Default["apiUserName"] = tbApiUserName.Text;
-			Settings.Default["apiKey"] = tbApiKey.Text;
-			Settings.Default["apiSecret"] = tbApiSecret.Text;
 			Settings.Default.Save();
 		}
 		private async void button1_Click(object sender, EventArgs e)
@@ -379,7 +376,7 @@ namespace ghashIO
 				try
 				{
 					IEnumerable<OpenOrder> openOrders = await _cexClient.OpenOrders(symbolPair);
-					var openOrderList = openOrders as IList<OpenOrder> ?? openOrders.ToList();
+					IList<OpenOrder> openOrderList = openOrders as IList<OpenOrder> ?? openOrders.ToList();
 					if (openOrders != null) openOrderCount = openOrderCount + openOrderList.Count();
 
 					_apiCallCount = ++_apiCallCount;
