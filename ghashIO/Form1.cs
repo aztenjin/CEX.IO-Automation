@@ -386,9 +386,10 @@ namespace ghashIO
 
 					foreach (OpenOrder openOrder in openOrderList.Where(openOrder => openOrder.Time.ToLocalDateTime() < DateTime.Now.AddMinutes(-5)))
 					{
+						if (openOrder.Id == 1655701860) continue;
 						bool success = await _cexClient.CancelOrder(openOrder.Id);
 						_apiCallCount = ++_apiCallCount;
-						
+
 						if (!success) continue;
 						_canceledOrders = ++_canceledOrders;
 						richTextBox1.AppendText("Removed order: " + openOrder.Id + Environment.NewLine);
