@@ -1,4 +1,4 @@
-﻿namespace ghashIO
+﻿namespace Cex.io
 {
     partial class Form1
     {
@@ -47,7 +47,9 @@
 			this.lblLastUpdated = new System.Windows.Forms.Label();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+			this.label11 = new System.Windows.Forms.Label();
 			this.lblghsPerHour = new System.Windows.Forms.Label();
+			this.label8 = new System.Windows.Forms.Label();
 			this.lblPurchasedBtc = new System.Windows.Forms.Label();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.lblBtcEarned = new System.Windows.Forms.Label();
@@ -86,7 +88,6 @@
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.btnBtcToGhs = new System.Windows.Forms.RadioButton();
 			this.btnGhsToBtc = new System.Windows.Forms.RadioButton();
-			this.udMaintanMinBalance = new System.Windows.Forms.NumericUpDown();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.cbAutoTradeBTC = new System.Windows.Forms.CheckBox();
 			this.label6 = new System.Windows.Forms.Label();
@@ -103,17 +104,19 @@
 			this.radioButton8 = new System.Windows.Forms.RadioButton();
 			this.btnSaveSettings = new System.Windows.Forms.Button();
 			this.groupBox5 = new System.Windows.Forms.GroupBox();
-			this.tbApiKey = new System.Windows.Forms.TextBox();
-			this.tbApiSecret = new System.Windows.Forms.TextBox();
-			this.tbApiUserName = new System.Windows.Forms.TextBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.tabPage4 = new System.Windows.Forms.TabPage();
 			this.tabPage5 = new System.Windows.Forms.TabPage();
-			this.label8 = new System.Windows.Forms.Label();
-			this.label11 = new System.Windows.Forms.Label();
+			this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
+			this.label12 = new System.Windows.Forms.Label();
+			this.progressBar1 = new System.Windows.Forms.ProgressBar();
+			this.udMaintanMinBalance = new System.Windows.Forms.NumericUpDown();
+			this.tbApiKey = new System.Windows.Forms.TextBox();
+			this.tbApiSecret = new System.Windows.Forms.TextBox();
+			this.tbApiUserName = new System.Windows.Forms.TextBox();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.groupBox4.SuspendLayout();
@@ -135,7 +138,6 @@
 			this.panel4.SuspendLayout();
 			this.panel3.SuspendLayout();
 			this.panel1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.udMaintanMinBalance)).BeginInit();
 			this.panel2.SuspendLayout();
 			this.panel6.SuspendLayout();
 			this.panel8.SuspendLayout();
@@ -143,6 +145,8 @@
 			this.panel10.SuspendLayout();
 			this.groupBox5.SuspendLayout();
 			this.tabPage3.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.udMaintanMinBalance)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// richTextBox1
@@ -198,11 +202,14 @@
 			this.tabControl1.Location = new System.Drawing.Point(0, 0);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(603, 399);
+			this.tabControl1.Size = new System.Drawing.Size(417, 307);
 			this.tabControl1.TabIndex = 9;
 			// 
 			// tabPage1
 			// 
+			this.tabPage1.Controls.Add(this.progressBar1);
+			this.tabPage1.Controls.Add(this.label12);
+			this.tabPage1.Controls.Add(this.numericUpDown5);
 			this.tabPage1.Controls.Add(this.button3);
 			this.tabPage1.Controls.Add(this.groupBox4);
 			this.tabPage1.Controls.Add(this.lblLastUpdated);
@@ -212,7 +219,7 @@
 			this.tabPage1.Location = new System.Drawing.Point(4, 22);
 			this.tabPage1.Name = "tabPage1";
 			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage1.Size = new System.Drawing.Size(595, 373);
+			this.tabPage1.Size = new System.Drawing.Size(409, 281);
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "Trading Stats";
 			this.tabPage1.UseVisualStyleBackColor = true;
@@ -347,6 +354,15 @@
 			this.tableLayoutPanel3.Size = new System.Drawing.Size(169, 71);
 			this.tableLayoutPanel3.TabIndex = 1;
 			// 
+			// label11
+			// 
+			this.label11.AutoSize = true;
+			this.label11.Location = new System.Drawing.Point(3, 45);
+			this.label11.Name = "label11";
+			this.label11.Size = new System.Drawing.Size(41, 13);
+			this.label11.TabIndex = 3;
+			this.label11.Text = "label11";
+			// 
 			// lblghsPerHour
 			// 
 			this.lblghsPerHour.AutoSize = true;
@@ -355,6 +371,15 @@
 			this.lblghsPerHour.Size = new System.Drawing.Size(150, 13);
 			this.lblghsPerHour.TabIndex = 28;
 			this.lblghsPerHour.Text = "GHS Per Hour: 000.00000000";
+			// 
+			// label8
+			// 
+			this.label8.AutoSize = true;
+			this.label8.Location = new System.Drawing.Point(3, 26);
+			this.label8.Name = "label8";
+			this.label8.Size = new System.Drawing.Size(35, 13);
+			this.label8.TabIndex = 2;
+			this.label8.Text = "label8";
 			// 
 			// lblPurchasedBtc
 			// 
@@ -853,26 +878,6 @@
 			this.btnGhsToBtc.UseVisualStyleBackColor = true;
 			this.btnGhsToBtc.CheckedChanged += new System.EventHandler(this.SaveSettings);
 			// 
-			// udMaintanMinBalance
-			// 
-			this.udMaintanMinBalance.DecimalPlaces = 8;
-			this.udMaintanMinBalance.Dock = System.Windows.Forms.DockStyle.Top;
-			this.udMaintanMinBalance.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            393216});
-			this.udMaintanMinBalance.Location = new System.Drawing.Point(323, 3);
-			this.udMaintanMinBalance.Name = "udMaintanMinBalance";
-			this.udMaintanMinBalance.Size = new System.Drawing.Size(85, 20);
-			this.udMaintanMinBalance.TabIndex = 9;
-			this.udMaintanMinBalance.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            393216});
-			this.udMaintanMinBalance.ValueChanged += new System.EventHandler(this.SaveSettings);
-			// 
 			// panel2
 			// 
 			this.panel2.AutoSize = true;
@@ -1067,33 +1072,6 @@
 			this.groupBox5.TabStop = false;
 			this.groupBox5.Text = "CEX API Information";
 			// 
-			// tbApiKey
-			// 
-			this.tbApiKey.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.tbApiKey.Location = new System.Drawing.Point(68, 38);
-			this.tbApiKey.Name = "tbApiKey";
-			this.tbApiKey.Size = new System.Drawing.Size(175, 20);
-			this.tbApiKey.TabIndex = 5;
-			this.tbApiKey.TextChanged += new System.EventHandler(this.SaveSettings);
-			// 
-			// tbApiSecret
-			// 
-			this.tbApiSecret.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.tbApiSecret.Location = new System.Drawing.Point(68, 64);
-			this.tbApiSecret.Name = "tbApiSecret";
-			this.tbApiSecret.Size = new System.Drawing.Size(175, 20);
-			this.tbApiSecret.TabIndex = 4;
-			this.tbApiSecret.TextChanged += new System.EventHandler(this.SaveSettings);
-			// 
-			// tbApiUserName
-			// 
-			this.tbApiUserName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.tbApiUserName.Location = new System.Drawing.Point(68, 12);
-			this.tbApiUserName.Name = "tbApiUserName";
-			this.tbApiUserName.Size = new System.Drawing.Size(175, 20);
-			this.tbApiUserName.TabIndex = 3;
-			this.tbApiUserName.TextChanged += new System.EventHandler(this.SaveSettings);
-			// 
 			// label5
 			// 
 			this.label5.AutoSize = true;
@@ -1152,29 +1130,90 @@
 			this.tabPage5.Text = "tabPage5";
 			this.tabPage5.UseVisualStyleBackColor = true;
 			// 
-			// label8
+			// numericUpDown5
 			// 
-			this.label8.AutoSize = true;
-			this.label8.Location = new System.Drawing.Point(3, 26);
-			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(35, 13);
-			this.label8.TabIndex = 2;
-			this.label8.Text = "label8";
+			this.numericUpDown5.Location = new System.Drawing.Point(403, 288);
+			this.numericUpDown5.Name = "numericUpDown5";
+			this.numericUpDown5.Size = new System.Drawing.Size(120, 20);
+			this.numericUpDown5.TabIndex = 15;
+			this.numericUpDown5.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
 			// 
-			// label11
+			// label12
 			// 
-			this.label11.AutoSize = true;
-			this.label11.Location = new System.Drawing.Point(3, 45);
-			this.label11.Name = "label11";
-			this.label11.Size = new System.Drawing.Size(41, 13);
-			this.label11.TabIndex = 3;
-			this.label11.Text = "label11";
+			this.label12.AutoSize = true;
+			this.label12.Location = new System.Drawing.Point(8, 263);
+			this.label12.Name = "label12";
+			this.label12.Size = new System.Drawing.Size(41, 13);
+			this.label12.TabIndex = 16;
+			this.label12.Text = "label12";
+			// 
+			// progressBar1
+			// 
+			this.progressBar1.Location = new System.Drawing.Point(8, 237);
+			this.progressBar1.MarqueeAnimationSpeed = 0;
+			this.progressBar1.Name = "progressBar1";
+			this.progressBar1.Size = new System.Drawing.Size(392, 23);
+			this.progressBar1.TabIndex = 17;
+			// 
+			// udMaintanMinBalance
+			// 
+			this.udMaintanMinBalance.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Cex.io.Properties.Settings.Default, "keepBtcBalance", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.udMaintanMinBalance.DecimalPlaces = 8;
+			this.udMaintanMinBalance.Dock = System.Windows.Forms.DockStyle.Top;
+			this.udMaintanMinBalance.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            393216});
+			this.udMaintanMinBalance.Location = new System.Drawing.Point(323, 3);
+			this.udMaintanMinBalance.Name = "udMaintanMinBalance";
+			this.udMaintanMinBalance.Size = new System.Drawing.Size(85, 20);
+			this.udMaintanMinBalance.TabIndex = 9;
+			this.udMaintanMinBalance.Value = global::Cex.io.Properties.Settings.Default.keepBtcBalance;
+			this.udMaintanMinBalance.ValueChanged += new System.EventHandler(this.SaveSettings);
+			// 
+			// tbApiKey
+			// 
+			this.tbApiKey.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.tbApiKey.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::Cex.io.Properties.Settings.Default, "cexApiKey", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.tbApiKey.Location = new System.Drawing.Point(68, 38);
+			this.tbApiKey.Name = "tbApiKey";
+			this.tbApiKey.Size = new System.Drawing.Size(175, 20);
+			this.tbApiKey.TabIndex = 5;
+			this.tbApiKey.Text = global::Cex.io.Properties.Settings.Default.cexApiKey;
+			this.tbApiKey.TextChanged += new System.EventHandler(this.SaveSettings);
+			// 
+			// tbApiSecret
+			// 
+			this.tbApiSecret.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.tbApiSecret.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::Cex.io.Properties.Settings.Default, "cexApiSecret", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.tbApiSecret.Location = new System.Drawing.Point(68, 64);
+			this.tbApiSecret.Name = "tbApiSecret";
+			this.tbApiSecret.Size = new System.Drawing.Size(175, 20);
+			this.tbApiSecret.TabIndex = 4;
+			this.tbApiSecret.Text = global::Cex.io.Properties.Settings.Default.cexApiSecret;
+			this.tbApiSecret.TextChanged += new System.EventHandler(this.SaveSettings);
+			// 
+			// tbApiUserName
+			// 
+			this.tbApiUserName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.tbApiUserName.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::Cex.io.Properties.Settings.Default, "cexUserName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.tbApiUserName.Location = new System.Drawing.Point(68, 12);
+			this.tbApiUserName.Name = "tbApiUserName";
+			this.tbApiUserName.Size = new System.Drawing.Size(175, 20);
+			this.tbApiUserName.TabIndex = 3;
+			this.tbApiUserName.Text = global::Cex.io.Properties.Settings.Default.cexUserName;
+			this.tbApiUserName.TextChanged += new System.EventHandler(this.SaveSettings);
 			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(603, 399);
+			this.ClientSize = new System.Drawing.Size(417, 307);
 			this.Controls.Add(this.tabControl1);
 			this.Controls.Add(this.button2);
 			this.Controls.Add(this.button1);
@@ -1215,7 +1254,6 @@
 			this.panel3.PerformLayout();
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.udMaintanMinBalance)).EndInit();
 			this.panel2.ResumeLayout(false);
 			this.panel2.PerformLayout();
 			this.panel6.ResumeLayout(false);
@@ -1229,6 +1267,8 @@
 			this.groupBox5.ResumeLayout(false);
 			this.groupBox5.PerformLayout();
 			this.tabPage3.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.udMaintanMinBalance)).EndInit();
 			this.ResumeLayout(false);
 
         }
@@ -1320,6 +1360,9 @@
 		private System.Windows.Forms.Button button3;
 		private System.Windows.Forms.Label label11;
 		private System.Windows.Forms.Label label8;
+		private System.Windows.Forms.NumericUpDown numericUpDown5;
+		private System.Windows.Forms.Label label12;
+		private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
 

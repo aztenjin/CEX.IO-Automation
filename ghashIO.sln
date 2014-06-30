@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ghashIO", "ghashIO\ghashIO.csproj", "{5D740292-3373-4BC4-8322-43DD65363705}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cex.io.Automation", "ghashIO\Cex.io.Automation.csproj", "{5D740292-3373-4BC4-8322-43DD65363705}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cex.io", "Cex.io\Cex.io.csproj", "{ABCC0E08-EB39-4FF6-B02A-0EDFC6F08DC7}"
 EndProject

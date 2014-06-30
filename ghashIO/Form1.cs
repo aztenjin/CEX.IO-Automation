@@ -5,10 +5,8 @@ using System.Linq;
 using System.Windows.Forms;
 using Nextmethod.Cex;
 using Nextmethod.Cex.Exceptions;
-using ghashIO.Properties;
 
-
-namespace ghashIO
+namespace Cex.io
 {
 	public partial class Form1 : Form
 	{
@@ -40,11 +38,11 @@ namespace ghashIO
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
-			//LoadSettings();
+			LoadSettings();
 			_firstRun = true;
-			_cexApiKey = "o3qCw0mySJkWNisqP6di8t9Dk";
-			_cexApiSecret = "SMtI8IFsb2TbPfz9yTJlHNPhK2s";
-			_cexUserName = "tenjin";
+			//_cexApiKey = "o3qCw0mySJkWNisqP6di8t9Dk";
+			//_cexApiSecret = "SMtI8IFsb2TbPfz9yTJlHNPhK2s";
+			//_cexUserName = "tenjin";
 			_apiCallCount = 0;
 			_cexApiCredentials = new ApiCredentials(_cexUserName, _cexApiKey, _cexApiSecret);
 			_cexClient = new CexApi(_cexApiCredentials);
@@ -59,31 +57,29 @@ namespace ghashIO
 			button1_Click(null, null);
 		}
 
-/*
+
 		private void LoadSettings()
 		{
 			//api credentials
 			
-			tbApiUserName.Text = (string) Settings.Default["apiUserName"];
-			tbApiKey.Text = (string) Settings.Default["apiKey"];
-			tbApiSecret.Text = (string) Settings.Default["apiSecret"];
+			tbApiUserName.Text = Properties.Settings.Default.cexUserName;
+			tbApiKey.Text = Properties.Settings.Default.cexApiKey;
+			udMaintanMinBalance.Value = Properties.Settings.Default.keepBtcBalance;
+
+			
 			_cexUserName = tbApiUserName.Text;
 			_cexApiKey = tbApiKey.Text;
 			_cexApiSecret = tbApiSecret.Text;
-
-
-
-			udMaintanMinBalance.Value = (decimal)Settings.Default["keepBtcBalance"];
-			
 		}
-*/
+
 		private void SaveSettings(object sender, EventArgs e)
 		{
-			Settings.Default["keepBtcBalance"] = udMaintanMinBalance.Value;
-			Settings.Default["apiUserName"] = tbApiUserName.Text;
-			Settings.Default["apiKey"] = tbApiKey.Text;
-			Settings.Default["apiSecret"] = tbApiSecret.Text;
-			Settings.Default.Save();
+			//Properties.Settings.Default.cexUserName = tbApiUserName.Text;
+			//Properties.Settings.Default.keepBtcBalance = udMaintanMinBalance.Value;
+			//Properties.Settings.Default.cexApiKey = tbApiKey.Text;
+
+
+			Properties.Settings.Default.Save();
 		}
 		private async void button1_Click(object sender, EventArgs e)
 		{
@@ -271,6 +267,19 @@ namespace ghashIO
 			lblLastUpdated.Text = @"Last update: " + DateTime.Now;
 			richTextBox1.ScrollToCaret();
 
+			//i. (a - b) / a [45 - 12] / 45 = 0.733... 
+//ii. Ans (i) x 100 [0.733 x 100]
+			if (udMaintanMinBalance.Value <= 0) return;
+			
+			decimal percent = (udMaintanMinBalance.Value - _balance.BTC.Available) / udMaintanMinBalance.Value;
+			percent = percent * 100;
+			percent = 100 - percent;
+			label12.Text = string.Format("{0} percent", Math.Round(percent,2));
+			if (percent <= 0) return;
+			
+			if (percent > 100)
+				percent = 100;
+			progressBar1.Value = (int) percent;
 		}
 
 		private void button2_Click(object sender, EventArgs e)
@@ -379,12 +388,12 @@ namespace ghashIO
 				try
 				{
 					IEnumerable<OpenOrder> openOrders = await _cexClient.OpenOrders(symbolPair);
-					var openOrderList = openOrders as IList<OpenOrder> ?? openOrders.ToList();
+					IList<OpenOrder> openOrderList = openOrders as IList<OpenOrder> ?? openOrders.ToList();
 					if (openOrders != null) openOrderCount = openOrderCount + openOrderList.Count();
 
 					_apiCallCount = ++_apiCallCount;
 
-					foreach (OpenOrder openOrder in openOrderList.Where(openOrder => openOrder.Time.ToLocalDateTime() < DateTime.Now.AddMinutes(-5)))
+					foreach (OpenOrder openOrder in openOrderList.Where(openOrder => openOrder.Time.ToLocalDateTime() < DateTime.Now.AddMinutes((double) (-numericUpDown5.Value))))
 					{
 						if (openOrder.Id == 1655701860) continue;
 						bool success = await _cexClient.CancelOrder(openOrder.Id);
