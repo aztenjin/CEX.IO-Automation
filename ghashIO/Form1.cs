@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
+using System.Net;
 using System.Windows.Forms;
 using Nextmethod.Cex;
 using Nextmethod.Cex.Exceptions;
@@ -64,7 +66,7 @@ namespace Cex.io
 			
 			tbApiUserName.Text = Properties.Settings.Default.cexUserName;
 			tbApiKey.Text = Properties.Settings.Default.cexApiKey;
-			udMaintanMinBalance.Value = Properties.Settings.Default.keepBtcBalance;
+			udMaintanMinBtcBalance.Value = Properties.Settings.Default.keepBtcBalance;
 
 			
 			_cexUserName = tbApiUserName.Text;
@@ -75,7 +77,7 @@ namespace Cex.io
 		private void SaveSettings(object sender, EventArgs e)
 		{
 			//Properties.Settings.Default.cexUserName = tbApiUserName.Text;
-			//Properties.Settings.Default.keepBtcBalance = udMaintanMinBalance.Value;
+			//Properties.Settings.Default.keepBtcBalance = udMaintanMinBtcBalance.Value;
 			//Properties.Settings.Default.cexApiKey = tbApiKey.Text;
 
 
@@ -142,7 +144,7 @@ namespace Cex.io
 
 				if (pair.To == Symbol.BTC)
 				{
-					availableBalance = balance.BTC.Available - udMaintanMinBalance.Value;
+					availableBalance = balance.BTC.Available - udMaintanMinBtcBalance.Value;
 					amount = PurchaseAmount(order.Price, availableBalance);
 				}
 
@@ -269,9 +271,9 @@ namespace Cex.io
 
 			//i. (a - b) / a [45 - 12] / 45 = 0.733... 
 //ii. Ans (i) x 100 [0.733 x 100]
-			if (udMaintanMinBalance.Value <= 0) return;
+			if (udMaintanMinBtcBalance.Value <= 0) return;
 			
-			decimal percent = (udMaintanMinBalance.Value - _balance.BTC.Available) / udMaintanMinBalance.Value;
+			decimal percent = (udMaintanMinBtcBalance.Value - _balance.BTC.Available) / udMaintanMinBtcBalance.Value;
 			percent = percent * 100;
 			percent = 100 - percent;
 			label12.Text = string.Format("{0} percent", Math.Round(percent,2));
@@ -289,8 +291,12 @@ namespace Cex.io
 
 		private void lblBtcValue_TextChanged(object sender, EventArgs e)
 		{
-			if (_balance.BTC.Available >= (decimal) 0.000001)
-				PlaceOrder(SymbolPair.GHS_BTC, _balance, OrderType.Buy);
+			if (_balance.BTC.Available >= udMaintanMinBtcBalance.Value && cbAutoTradeBTC.Checked)
+			{
+				if (rbBtcToGhs.Checked)
+					PlaceOrder(SymbolPair.GHS_BTC, _balance, OrderType.Buy);
+
+			}
 
 
 			if (Convert.ToDecimal(lblBtcValue.Text) > _previousBtcValue)
@@ -426,5 +432,88 @@ namespace Cex.io
 		{
 			timer2_Tick_1(null, null);
 		}
+
+		private void rbBtcToLtc_CheckedChanged(object sender, EventArgs e)
+		{
+			if (rbBtcToLtc.Checked)
+				rbLtctoBtc.Checked = false;
+				
+			
+			SaveSettings(null, null);
+		}
+
+		private void rbBtcToIxc_CheckedChanged(object sender, EventArgs e)
+		{
+			if (rbBtcToIxc.Checked)
+				rbIxcToBtc.Checked = false;
+				
+			SaveSettings(null, null);
+		}
+
+		private void rbBtcToNmc_CheckedChanged(object sender, EventArgs e)
+		{
+			if (rbBtcToNmc.Checked)
+				cbAutoTradeNmc.Checked = false;
+				
+			SaveSettings(null, null);
+		}
+
+		private void rbBtcToGhs_CheckedChanged(object sender, EventArgs e)
+		{
+			if (rbBtcToGhs.Checked)
+				rbGhsToBtc.Checked = false;
+				
+			SaveSettings(null, null);
+		}
+
+		private void rbLtctoBtc_CheckedChanged(object sender, EventArgs e)
+		{
+			if (rbLtctoBtc.Checked)
+				rbBtcToLtc.Checked = false;
+			
+			SaveSettings(null, null);
+		}
+
+		private void rbNmcToBtc_CheckedChanged(object sender, EventArgs e)
+		{
+			if (rbNmcToBtc.Checked)
+				rbBtcToNmc.Checked = false;
+			
+
+			SaveSettings(null, null);
+		}
+
+		private async void timer3_Tick(object sender, EventArgs e)
+		{
+			GhashApi ghashApi = new GhashApi(_cexApiCredentials);
+			Hashrate hashRate = await ghashApi.Hashrate();
+			decimal difficulty = GetCurrentDifficulty();
+			_apiCallCount = ++_apiCallCount;
+
+
+			lblHashRate.Text = string.Format("Current Hash Rate: {0}", hashRate.Last5Minutes);
+			lblCurrentDiff.Text = difficulty.ToString();
+
+			if (difficulty <= 0 || hashRate.Last5Minutes <= 0) return;
+			double pow = Math.Pow((double) difficulty, 2 ^ 32);
+			var d = (86400/pow)/(double) hashRate.Last5Minutes;
+			lblCoinsPerDay.Text = d.ToString();
+
+
+
+		}
+
+		private static decimal GetCurrentDifficulty()
+		{
+			string diff;
+			using (WebClient client = new WebClient())
+			{
+				diff = client.DownloadString("https://blockchain.info/q/getdifficulty");
+			}
+			decimal finalDecimal = Decimal.Parse(diff, NumberStyles.AllowExponent | NumberStyles.AllowDecimalPoint);
+			return finalDecimal;
+		}
+
+		
 	}
 }

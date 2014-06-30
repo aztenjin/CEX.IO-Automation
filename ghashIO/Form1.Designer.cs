@@ -36,6 +36,9 @@
 			this.timer2 = new System.Windows.Forms.Timer(this.components);
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
+			this.progressBar1 = new System.Windows.Forms.ProgressBar();
+			this.label12 = new System.Windows.Forms.Label();
+			this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
 			this.button3 = new System.Windows.Forms.Button();
 			this.groupBox4 = new System.Windows.Forms.GroupBox();
 			this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -77,31 +80,27 @@
 			this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
 			this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
 			this.panel7 = new System.Windows.Forms.Panel();
-			this.checkBox4 = new System.Windows.Forms.CheckBox();
+			this.cbAutoTradeIxc = new System.Windows.Forms.CheckBox();
 			this.panel5 = new System.Windows.Forms.Panel();
-			this.checkBox2 = new System.Windows.Forms.CheckBox();
-			this.panel4 = new System.Windows.Forms.Panel();
-			this.radioButton3 = new System.Windows.Forms.RadioButton();
-			this.radioButton4 = new System.Windows.Forms.RadioButton();
+			this.cbAutoTradeNmc = new System.Windows.Forms.CheckBox();
+			this.pnlLtcTrade = new System.Windows.Forms.Panel();
+			this.rbLtctoBtc = new System.Windows.Forms.RadioButton();
 			this.panel3 = new System.Windows.Forms.Panel();
-			this.checkBox1 = new System.Windows.Forms.CheckBox();
-			this.panel1 = new System.Windows.Forms.Panel();
-			this.btnBtcToGhs = new System.Windows.Forms.RadioButton();
-			this.btnGhsToBtc = new System.Windows.Forms.RadioButton();
+			this.cbAutoTradeLtc = new System.Windows.Forms.CheckBox();
+			this.pnlBtcTrade = new System.Windows.Forms.Panel();
+			this.rbBtcToNmc = new System.Windows.Forms.RadioButton();
+			this.rbBtcToGhs = new System.Windows.Forms.RadioButton();
 			this.panel2 = new System.Windows.Forms.Panel();
-			this.cbAutoTradeBTC = new System.Windows.Forms.CheckBox();
 			this.label6 = new System.Windows.Forms.Label();
 			this.panel6 = new System.Windows.Forms.Panel();
-			this.checkBox3 = new System.Windows.Forms.CheckBox();
-			this.panel8 = new System.Windows.Forms.Panel();
-			this.radioButton1 = new System.Windows.Forms.RadioButton();
-			this.radioButton2 = new System.Windows.Forms.RadioButton();
-			this.panel9 = new System.Windows.Forms.Panel();
-			this.radioButton5 = new System.Windows.Forms.RadioButton();
-			this.radioButton6 = new System.Windows.Forms.RadioButton();
-			this.panel10 = new System.Windows.Forms.Panel();
-			this.radioButton7 = new System.Windows.Forms.RadioButton();
-			this.radioButton8 = new System.Windows.Forms.RadioButton();
+			this.cbAutoTradeGhs = new System.Windows.Forms.CheckBox();
+			this.pnlNmcTrade = new System.Windows.Forms.Panel();
+			this.rbNmcToBtc = new System.Windows.Forms.RadioButton();
+			this.pnlGhsTrade = new System.Windows.Forms.Panel();
+			this.rbGhsToBtc = new System.Windows.Forms.RadioButton();
+			this.rbGhsToNmc = new System.Windows.Forms.RadioButton();
+			this.pnlIxcTrade = new System.Windows.Forms.Panel();
+			this.rbIxcToBtc = new System.Windows.Forms.RadioButton();
 			this.btnSaveSettings = new System.Windows.Forms.Button();
 			this.groupBox5 = new System.Windows.Forms.GroupBox();
 			this.label5 = new System.Windows.Forms.Label();
@@ -110,15 +109,20 @@
 			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.tabPage4 = new System.Windows.Forms.TabPage();
 			this.tabPage5 = new System.Windows.Forms.TabPage();
-			this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
-			this.label12 = new System.Windows.Forms.Label();
-			this.progressBar1 = new System.Windows.Forms.ProgressBar();
-			this.udMaintanMinBalance = new System.Windows.Forms.NumericUpDown();
+			this.rbBtcToIxc = new System.Windows.Forms.RadioButton();
+			this.rbBtcToLtc = new System.Windows.Forms.RadioButton();
+			this.udMaintanMinBtcBalance = new System.Windows.Forms.NumericUpDown();
+			this.cbAutoTradeBTC = new System.Windows.Forms.CheckBox();
 			this.tbApiKey = new System.Windows.Forms.TextBox();
 			this.tbApiSecret = new System.Windows.Forms.TextBox();
 			this.tbApiUserName = new System.Windows.Forms.TextBox();
+			this.lblCurrentDiff = new System.Windows.Forms.Label();
+			this.lblCoinsPerDay = new System.Windows.Forms.Label();
+			this.lblHashRate = new System.Windows.Forms.Label();
+			this.timer3 = new System.Windows.Forms.Timer(this.components);
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
 			this.groupBox4.SuspendLayout();
 			this.tableLayoutPanel4.SuspendLayout();
 			this.groupBox3.SuspendLayout();
@@ -135,18 +139,17 @@
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
 			this.panel7.SuspendLayout();
 			this.panel5.SuspendLayout();
-			this.panel4.SuspendLayout();
+			this.pnlLtcTrade.SuspendLayout();
 			this.panel3.SuspendLayout();
-			this.panel1.SuspendLayout();
+			this.pnlBtcTrade.SuspendLayout();
 			this.panel2.SuspendLayout();
 			this.panel6.SuspendLayout();
-			this.panel8.SuspendLayout();
-			this.panel9.SuspendLayout();
-			this.panel10.SuspendLayout();
+			this.pnlNmcTrade.SuspendLayout();
+			this.pnlGhsTrade.SuspendLayout();
+			this.pnlIxcTrade.SuspendLayout();
 			this.groupBox5.SuspendLayout();
 			this.tabPage3.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.udMaintanMinBalance)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.udMaintanMinBtcBalance)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// richTextBox1
@@ -154,7 +157,7 @@
 			this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.richTextBox1.Location = new System.Drawing.Point(3, 3);
 			this.richTextBox1.Name = "richTextBox1";
-			this.richTextBox1.Size = new System.Drawing.Size(589, 367);
+			this.richTextBox1.Size = new System.Drawing.Size(828, 532);
 			this.richTextBox1.TabIndex = 0;
 			this.richTextBox1.Text = "";
 			// 
@@ -202,7 +205,7 @@
 			this.tabControl1.Location = new System.Drawing.Point(0, 0);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(417, 307);
+			this.tabControl1.Size = new System.Drawing.Size(842, 564);
 			this.tabControl1.TabIndex = 9;
 			// 
 			// tabPage1
@@ -219,14 +222,43 @@
 			this.tabPage1.Location = new System.Drawing.Point(4, 22);
 			this.tabPage1.Name = "tabPage1";
 			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage1.Size = new System.Drawing.Size(409, 281);
+			this.tabPage1.Size = new System.Drawing.Size(834, 538);
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "Trading Stats";
 			this.tabPage1.UseVisualStyleBackColor = true;
 			// 
+			// progressBar1
+			// 
+			this.progressBar1.Location = new System.Drawing.Point(404, 25);
+			this.progressBar1.MarqueeAnimationSpeed = 0;
+			this.progressBar1.Name = "progressBar1";
+			this.progressBar1.Size = new System.Drawing.Size(392, 23);
+			this.progressBar1.TabIndex = 17;
+			// 
+			// label12
+			// 
+			this.label12.AutoSize = true;
+			this.label12.Location = new System.Drawing.Point(404, 51);
+			this.label12.Name = "label12";
+			this.label12.Size = new System.Drawing.Size(41, 13);
+			this.label12.TabIndex = 16;
+			this.label12.Text = "label12";
+			// 
+			// numericUpDown5
+			// 
+			this.numericUpDown5.Location = new System.Drawing.Point(407, 82);
+			this.numericUpDown5.Name = "numericUpDown5";
+			this.numericUpDown5.Size = new System.Drawing.Size(120, 20);
+			this.numericUpDown5.TabIndex = 15;
+			this.numericUpDown5.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+			// 
 			// button3
 			// 
-			this.button3.Location = new System.Drawing.Point(28, 300);
+			this.button3.Location = new System.Drawing.Point(475, 127);
 			this.button3.Name = "button3";
 			this.button3.Size = new System.Drawing.Size(75, 23);
 			this.button3.TabIndex = 14;
@@ -315,7 +347,7 @@
 			// lblLastUpdated
 			// 
 			this.lblLastUpdated.AutoSize = true;
-			this.lblLastUpdated.Location = new System.Drawing.Point(5, 221);
+			this.lblLastUpdated.Location = new System.Drawing.Point(398, 64);
 			this.lblLastUpdated.Name = "lblLastUpdated";
 			this.lblLastUpdated.Size = new System.Drawing.Size(193, 13);
 			this.lblLastUpdated.TabIndex = 4;
@@ -327,7 +359,7 @@
 			this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.groupBox3.Location = new System.Drawing.Point(181, 118);
 			this.groupBox3.Name = "groupBox3";
-			this.groupBox3.Size = new System.Drawing.Size(219, 96);
+			this.groupBox3.Size = new System.Drawing.Size(264, 124);
 			this.groupBox3.TabIndex = 11;
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "GHS Earning Stats";
@@ -336,28 +368,30 @@
 			// 
 			this.tableLayoutPanel3.ColumnCount = 1;
 			this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 169F));
-			this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
 			this.tableLayoutPanel3.Controls.Add(this.label11, 0, 3);
 			this.tableLayoutPanel3.Controls.Add(this.lblghsPerHour, 0, 1);
 			this.tableLayoutPanel3.Controls.Add(this.label8, 0, 2);
 			this.tableLayoutPanel3.Controls.Add(this.lblPurchasedBtc, 0, 0);
+			this.tableLayoutPanel3.Controls.Add(this.lblCurrentDiff, 0, 4);
+			this.tableLayoutPanel3.Controls.Add(this.lblCoinsPerDay, 0, 6);
+			this.tableLayoutPanel3.Controls.Add(this.lblHashRate, 0, 5);
 			this.tableLayoutPanel3.Location = new System.Drawing.Point(6, 19);
 			this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-			this.tableLayoutPanel3.RowCount = 4;
+			this.tableLayoutPanel3.RowCount = 7;
 			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
 			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 19F));
-			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
-			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-			this.tableLayoutPanel3.Size = new System.Drawing.Size(169, 71);
+			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+			this.tableLayoutPanel3.Size = new System.Drawing.Size(241, 96);
 			this.tableLayoutPanel3.TabIndex = 1;
 			// 
 			// label11
 			// 
 			this.label11.AutoSize = true;
-			this.label11.Location = new System.Drawing.Point(3, 45);
+			this.label11.Location = new System.Drawing.Point(3, 39);
 			this.label11.Name = "label11";
 			this.label11.Size = new System.Drawing.Size(41, 13);
 			this.label11.TabIndex = 3;
@@ -599,7 +633,7 @@
 			this.tabPage2.Location = new System.Drawing.Point(4, 22);
 			this.tabPage2.Name = "tabPage2";
 			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage2.Size = new System.Drawing.Size(595, 373);
+			this.tabPage2.Size = new System.Drawing.Size(834, 538);
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "Settings";
 			this.tabPage2.UseVisualStyleBackColor = true;
@@ -612,7 +646,7 @@
 			this.groupBox6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.groupBox6.Location = new System.Drawing.Point(8, 115);
 			this.groupBox6.Name = "groupBox6";
-			this.groupBox6.Size = new System.Drawing.Size(423, 183);
+			this.groupBox6.Size = new System.Drawing.Size(425, 197);
 			this.groupBox6.TabIndex = 12;
 			this.groupBox6.TabStop = false;
 			this.groupBox6.Text = "Coin Trading Settings";
@@ -631,15 +665,15 @@
 			this.tableLayoutPanel1.Controls.Add(this.numericUpDown1, 2, 1);
 			this.tableLayoutPanel1.Controls.Add(this.panel7, 0, 4);
 			this.tableLayoutPanel1.Controls.Add(this.panel5, 0, 2);
-			this.tableLayoutPanel1.Controls.Add(this.panel4, 1, 1);
+			this.tableLayoutPanel1.Controls.Add(this.pnlLtcTrade, 1, 1);
 			this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 1);
-			this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 0);
-			this.tableLayoutPanel1.Controls.Add(this.udMaintanMinBalance, 2, 0);
+			this.tableLayoutPanel1.Controls.Add(this.pnlBtcTrade, 1, 0);
+			this.tableLayoutPanel1.Controls.Add(this.udMaintanMinBtcBalance, 2, 0);
 			this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
 			this.tableLayoutPanel1.Controls.Add(this.panel6, 0, 3);
-			this.tableLayoutPanel1.Controls.Add(this.panel8, 1, 2);
-			this.tableLayoutPanel1.Controls.Add(this.panel9, 1, 3);
-			this.tableLayoutPanel1.Controls.Add(this.panel10, 1, 4);
+			this.tableLayoutPanel1.Controls.Add(this.pnlNmcTrade, 1, 2);
+			this.tableLayoutPanel1.Controls.Add(this.pnlGhsTrade, 1, 3);
+			this.tableLayoutPanel1.Controls.Add(this.pnlIxcTrade, 1, 4);
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 19);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
 			this.tableLayoutPanel1.RowCount = 5;
@@ -648,7 +682,7 @@
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-			this.tableLayoutPanel1.Size = new System.Drawing.Size(411, 145);
+			this.tableLayoutPanel1.Size = new System.Drawing.Size(413, 159);
 			this.tableLayoutPanel1.TabIndex = 0;
 			// 
 			// numericUpDown4
@@ -660,7 +694,7 @@
             0,
             0,
             393216});
-			this.numericUpDown4.Location = new System.Drawing.Point(323, 119);
+			this.numericUpDown4.Location = new System.Drawing.Point(325, 133);
 			this.numericUpDown4.Name = "numericUpDown4";
 			this.numericUpDown4.Size = new System.Drawing.Size(85, 20);
 			this.numericUpDown4.TabIndex = 19;
@@ -680,7 +714,7 @@
             0,
             0,
             393216});
-			this.numericUpDown3.Location = new System.Drawing.Point(323, 90);
+			this.numericUpDown3.Location = new System.Drawing.Point(325, 104);
 			this.numericUpDown3.Name = "numericUpDown3";
 			this.numericUpDown3.Size = new System.Drawing.Size(85, 20);
 			this.numericUpDown3.TabIndex = 18;
@@ -700,7 +734,7 @@
             0,
             0,
             393216});
-			this.numericUpDown2.Location = new System.Drawing.Point(323, 61);
+			this.numericUpDown2.Location = new System.Drawing.Point(325, 75);
 			this.numericUpDown2.Name = "numericUpDown2";
 			this.numericUpDown2.Size = new System.Drawing.Size(85, 20);
 			this.numericUpDown2.TabIndex = 17;
@@ -720,7 +754,7 @@
             0,
             0,
             393216});
-			this.numericUpDown1.Location = new System.Drawing.Point(323, 32);
+			this.numericUpDown1.Location = new System.Drawing.Point(325, 46);
 			this.numericUpDown1.Name = "numericUpDown1";
 			this.numericUpDown1.Size = new System.Drawing.Size(85, 20);
 			this.numericUpDown1.TabIndex = 16;
@@ -735,148 +769,140 @@
 			// 
 			this.panel7.AutoSize = true;
 			this.panel7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.panel7.Controls.Add(this.checkBox4);
+			this.panel7.Controls.Add(this.cbAutoTradeIxc);
 			this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel7.Location = new System.Drawing.Point(3, 119);
+			this.panel7.Location = new System.Drawing.Point(3, 133);
 			this.panel7.Name = "panel7";
-			this.panel7.Size = new System.Drawing.Size(131, 23);
+			this.panel7.Size = new System.Drawing.Size(128, 23);
 			this.panel7.TabIndex = 11;
 			// 
-			// checkBox4
+			// cbAutoTradeIxc
 			// 
-			this.checkBox4.AutoSize = true;
-			this.checkBox4.Dock = System.Windows.Forms.DockStyle.Left;
-			this.checkBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.checkBox4.Location = new System.Drawing.Point(0, 0);
-			this.checkBox4.Name = "checkBox4";
-			this.checkBox4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-			this.checkBox4.Size = new System.Drawing.Size(122, 23);
-			this.checkBox4.TabIndex = 2;
-			this.checkBox4.Text = "Auto Trade IXC/BTC";
-			this.checkBox4.UseVisualStyleBackColor = true;
-			this.checkBox4.CheckedChanged += new System.EventHandler(this.SaveSettings);
+			this.cbAutoTradeIxc.AutoSize = true;
+			this.cbAutoTradeIxc.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.cbAutoTradeIxc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.cbAutoTradeIxc.Location = new System.Drawing.Point(0, 0);
+			this.cbAutoTradeIxc.Name = "cbAutoTradeIxc";
+			this.cbAutoTradeIxc.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+			this.cbAutoTradeIxc.Size = new System.Drawing.Size(128, 23);
+			this.cbAutoTradeIxc.TabIndex = 2;
+			this.cbAutoTradeIxc.Text = "Auto Trade IXC";
+			this.cbAutoTradeIxc.UseVisualStyleBackColor = true;
+			this.cbAutoTradeIxc.CheckedChanged += new System.EventHandler(this.SaveSettings);
 			// 
 			// panel5
 			// 
 			this.panel5.AutoSize = true;
 			this.panel5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.panel5.Controls.Add(this.checkBox2);
+			this.panel5.Controls.Add(this.cbAutoTradeNmc);
 			this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel5.Location = new System.Drawing.Point(3, 61);
+			this.panel5.Location = new System.Drawing.Point(3, 75);
 			this.panel5.Name = "panel5";
-			this.panel5.Size = new System.Drawing.Size(131, 23);
+			this.panel5.Size = new System.Drawing.Size(128, 23);
 			this.panel5.TabIndex = 10;
 			// 
-			// checkBox2
+			// cbAutoTradeNmc
 			// 
-			this.checkBox2.AutoSize = true;
-			this.checkBox2.Dock = System.Windows.Forms.DockStyle.Left;
-			this.checkBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.checkBox2.Location = new System.Drawing.Point(0, 0);
-			this.checkBox2.Name = "checkBox2";
-			this.checkBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-			this.checkBox2.Size = new System.Drawing.Size(129, 23);
-			this.checkBox2.TabIndex = 2;
-			this.checkBox2.Text = "Auto Trade NMC/BTC";
-			this.checkBox2.UseVisualStyleBackColor = true;
-			this.checkBox2.CheckedChanged += new System.EventHandler(this.SaveSettings);
+			this.cbAutoTradeNmc.AutoSize = true;
+			this.cbAutoTradeNmc.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.cbAutoTradeNmc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.cbAutoTradeNmc.Location = new System.Drawing.Point(0, 0);
+			this.cbAutoTradeNmc.Name = "cbAutoTradeNmc";
+			this.cbAutoTradeNmc.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+			this.cbAutoTradeNmc.Size = new System.Drawing.Size(128, 23);
+			this.cbAutoTradeNmc.TabIndex = 2;
+			this.cbAutoTradeNmc.Text = "Auto Trade NMC";
+			this.cbAutoTradeNmc.UseVisualStyleBackColor = true;
+			this.cbAutoTradeNmc.CheckedChanged += new System.EventHandler(this.SaveSettings);
 			// 
-			// panel4
+			// pnlLtcTrade
 			// 
-			this.panel4.AutoSize = true;
-			this.panel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.panel4.Controls.Add(this.radioButton3);
-			this.panel4.Controls.Add(this.radioButton4);
-			this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel4.Location = new System.Drawing.Point(140, 32);
-			this.panel4.Name = "panel4";
-			this.panel4.Size = new System.Drawing.Size(177, 23);
-			this.panel4.TabIndex = 4;
+			this.pnlLtcTrade.AutoSize = true;
+			this.pnlLtcTrade.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+			this.pnlLtcTrade.Controls.Add(this.rbLtctoBtc);
+			this.pnlLtcTrade.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.pnlLtcTrade.Location = new System.Drawing.Point(137, 46);
+			this.pnlLtcTrade.Name = "pnlLtcTrade";
+			this.pnlLtcTrade.Size = new System.Drawing.Size(182, 23);
+			this.pnlLtcTrade.TabIndex = 4;
 			// 
-			// radioButton3
+			// rbLtctoBtc
 			// 
-			this.radioButton3.AutoSize = true;
-			this.radioButton3.Location = new System.Drawing.Point(87, 3);
-			this.radioButton3.Name = "radioButton3";
-			this.radioButton3.Size = new System.Drawing.Size(81, 17);
-			this.radioButton3.TabIndex = 1;
-			this.radioButton3.TabStop = true;
-			this.radioButton3.Text = "LTC <- BTC";
-			this.radioButton3.UseVisualStyleBackColor = true;
-			this.radioButton3.CheckedChanged += new System.EventHandler(this.SaveSettings);
-			// 
-			// radioButton4
-			// 
-			this.radioButton4.AutoSize = true;
-			this.radioButton4.Location = new System.Drawing.Point(3, 3);
-			this.radioButton4.Name = "radioButton4";
-			this.radioButton4.Size = new System.Drawing.Size(81, 17);
-			this.radioButton4.TabIndex = 0;
-			this.radioButton4.TabStop = true;
-			this.radioButton4.Text = "LTC -> BTC";
-			this.radioButton4.UseVisualStyleBackColor = true;
-			this.radioButton4.CheckedChanged += new System.EventHandler(this.SaveSettings);
+			this.rbLtctoBtc.AutoSize = true;
+			this.rbLtctoBtc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.rbLtctoBtc.Location = new System.Drawing.Point(3, 3);
+			this.rbLtctoBtc.Name = "rbLtctoBtc";
+			this.rbLtctoBtc.Size = new System.Drawing.Size(80, 17);
+			this.rbLtctoBtc.TabIndex = 0;
+			this.rbLtctoBtc.TabStop = true;
+			this.rbLtctoBtc.Text = "LTC -> BTC";
+			this.rbLtctoBtc.UseVisualStyleBackColor = true;
+			this.rbLtctoBtc.CheckedChanged += new System.EventHandler(this.rbLtctoBtc_CheckedChanged);
 			// 
 			// panel3
 			// 
 			this.panel3.AutoSize = true;
 			this.panel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.panel3.Controls.Add(this.checkBox1);
+			this.panel3.Controls.Add(this.cbAutoTradeLtc);
 			this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel3.Location = new System.Drawing.Point(3, 32);
+			this.panel3.Location = new System.Drawing.Point(3, 46);
 			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(131, 23);
+			this.panel3.Size = new System.Drawing.Size(128, 23);
 			this.panel3.TabIndex = 3;
 			// 
-			// checkBox1
+			// cbAutoTradeLtc
 			// 
-			this.checkBox1.AutoSize = true;
-			this.checkBox1.Dock = System.Windows.Forms.DockStyle.Left;
-			this.checkBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.checkBox1.Location = new System.Drawing.Point(0, 0);
-			this.checkBox1.Name = "checkBox1";
-			this.checkBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-			this.checkBox1.Size = new System.Drawing.Size(125, 23);
-			this.checkBox1.TabIndex = 2;
-			this.checkBox1.Text = "Auto Trade LTC/BTC";
-			this.checkBox1.UseVisualStyleBackColor = true;
-			this.checkBox1.CheckedChanged += new System.EventHandler(this.SaveSettings);
+			this.cbAutoTradeLtc.AutoSize = true;
+			this.cbAutoTradeLtc.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.cbAutoTradeLtc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.cbAutoTradeLtc.Location = new System.Drawing.Point(0, 0);
+			this.cbAutoTradeLtc.Name = "cbAutoTradeLtc";
+			this.cbAutoTradeLtc.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+			this.cbAutoTradeLtc.Size = new System.Drawing.Size(128, 23);
+			this.cbAutoTradeLtc.TabIndex = 2;
+			this.cbAutoTradeLtc.Text = "Auto Trade LTC";
+			this.cbAutoTradeLtc.UseVisualStyleBackColor = true;
+			this.cbAutoTradeLtc.CheckedChanged += new System.EventHandler(this.SaveSettings);
 			// 
-			// panel1
+			// pnlBtcTrade
 			// 
-			this.panel1.AutoSize = true;
-			this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.panel1.Controls.Add(this.btnBtcToGhs);
-			this.panel1.Controls.Add(this.btnGhsToBtc);
-			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel1.Location = new System.Drawing.Point(140, 3);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(177, 23);
-			this.panel1.TabIndex = 1;
+			this.pnlBtcTrade.AutoSize = true;
+			this.pnlBtcTrade.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+			this.pnlBtcTrade.Controls.Add(this.rbBtcToIxc);
+			this.pnlBtcTrade.Controls.Add(this.rbBtcToNmc);
+			this.pnlBtcTrade.Controls.Add(this.rbBtcToLtc);
+			this.pnlBtcTrade.Controls.Add(this.rbBtcToGhs);
+			this.pnlBtcTrade.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.pnlBtcTrade.Location = new System.Drawing.Point(137, 3);
+			this.pnlBtcTrade.Name = "pnlBtcTrade";
+			this.pnlBtcTrade.Size = new System.Drawing.Size(182, 37);
+			this.pnlBtcTrade.TabIndex = 1;
 			// 
-			// btnBtcToGhs
+			// rbBtcToNmc
 			// 
-			this.btnBtcToGhs.AutoSize = true;
-			this.btnBtcToGhs.Location = new System.Drawing.Point(87, 3);
-			this.btnBtcToGhs.Name = "btnBtcToGhs";
-			this.btnBtcToGhs.Size = new System.Drawing.Size(84, 17);
-			this.btnBtcToGhs.TabIndex = 1;
-			this.btnBtcToGhs.TabStop = true;
-			this.btnBtcToGhs.Text = "GHS <- BTC";
-			this.btnBtcToGhs.UseVisualStyleBackColor = true;
-			this.btnBtcToGhs.CheckedChanged += new System.EventHandler(this.SaveSettings);
+			this.rbBtcToNmc.AutoSize = true;
+			this.rbBtcToNmc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.rbBtcToNmc.Location = new System.Drawing.Point(3, 17);
+			this.rbBtcToNmc.Name = "rbBtcToNmc";
+			this.rbBtcToNmc.Size = new System.Drawing.Size(81, 17);
+			this.rbBtcToNmc.TabIndex = 1;
+			this.rbBtcToNmc.TabStop = true;
+			this.rbBtcToNmc.Text = "BTC-> NMC";
+			this.rbBtcToNmc.UseVisualStyleBackColor = true;
+			this.rbBtcToNmc.CheckedChanged += new System.EventHandler(this.rbBtcToNmc_CheckedChanged);
 			// 
-			// btnGhsToBtc
+			// rbBtcToGhs
 			// 
-			this.btnGhsToBtc.AutoSize = true;
-			this.btnGhsToBtc.Location = new System.Drawing.Point(3, 3);
-			this.btnGhsToBtc.Name = "btnGhsToBtc";
-			this.btnGhsToBtc.Size = new System.Drawing.Size(84, 17);
-			this.btnGhsToBtc.TabIndex = 0;
-			this.btnGhsToBtc.TabStop = true;
-			this.btnGhsToBtc.Text = "GHS -> BTC";
-			this.btnGhsToBtc.UseVisualStyleBackColor = true;
-			this.btnGhsToBtc.CheckedChanged += new System.EventHandler(this.SaveSettings);
+			this.rbBtcToGhs.AutoSize = true;
+			this.rbBtcToGhs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.rbBtcToGhs.Location = new System.Drawing.Point(96, 17);
+			this.rbBtcToGhs.Name = "rbBtcToGhs";
+			this.rbBtcToGhs.Size = new System.Drawing.Size(83, 17);
+			this.rbBtcToGhs.TabIndex = 1;
+			this.rbBtcToGhs.TabStop = true;
+			this.rbBtcToGhs.Text = "BTC -> GHS";
+			this.rbBtcToGhs.UseVisualStyleBackColor = true;
+			this.rbBtcToGhs.CheckedChanged += new System.EventHandler(this.rbBtcToGhs_CheckedChanged);
 			// 
 			// panel2
 			// 
@@ -887,21 +913,8 @@
 			this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel2.Location = new System.Drawing.Point(3, 3);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(131, 23);
+			this.panel2.Size = new System.Drawing.Size(128, 37);
 			this.panel2.TabIndex = 2;
-			// 
-			// cbAutoTradeBTC
-			// 
-			this.cbAutoTradeBTC.Dock = System.Windows.Forms.DockStyle.Left;
-			this.cbAutoTradeBTC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.cbAutoTradeBTC.Location = new System.Drawing.Point(0, 0);
-			this.cbAutoTradeBTC.Name = "cbAutoTradeBTC";
-			this.cbAutoTradeBTC.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-			this.cbAutoTradeBTC.Size = new System.Drawing.Size(128, 23);
-			this.cbAutoTradeBTC.TabIndex = 1;
-			this.cbAutoTradeBTC.Text = "Auto Trade BTC/GHS";
-			this.cbAutoTradeBTC.UseVisualStyleBackColor = true;
-			this.cbAutoTradeBTC.CheckedChanged += new System.EventHandler(this.SaveSettings);
 			// 
 			// label6
 			// 
@@ -915,134 +928,111 @@
 			// 
 			this.panel6.AutoSize = true;
 			this.panel6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.panel6.Controls.Add(this.checkBox3);
+			this.panel6.Controls.Add(this.cbAutoTradeGhs);
 			this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel6.Location = new System.Drawing.Point(3, 90);
+			this.panel6.Location = new System.Drawing.Point(3, 104);
 			this.panel6.Name = "panel6";
-			this.panel6.Size = new System.Drawing.Size(131, 23);
+			this.panel6.Size = new System.Drawing.Size(128, 23);
 			this.panel6.TabIndex = 11;
 			// 
-			// checkBox3
+			// cbAutoTradeGhs
 			// 
-			this.checkBox3.AutoSize = true;
-			this.checkBox3.Dock = System.Windows.Forms.DockStyle.Left;
-			this.checkBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.checkBox3.Location = new System.Drawing.Point(0, 0);
-			this.checkBox3.Name = "checkBox3";
-			this.checkBox3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-			this.checkBox3.Size = new System.Drawing.Size(131, 23);
-			this.checkBox3.TabIndex = 2;
-			this.checkBox3.Text = "Auto Trade GHS/NMC";
-			this.checkBox3.UseVisualStyleBackColor = true;
-			this.checkBox3.CheckedChanged += new System.EventHandler(this.SaveSettings);
+			this.cbAutoTradeGhs.AutoSize = true;
+			this.cbAutoTradeGhs.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.cbAutoTradeGhs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.cbAutoTradeGhs.Location = new System.Drawing.Point(0, 0);
+			this.cbAutoTradeGhs.Name = "cbAutoTradeGhs";
+			this.cbAutoTradeGhs.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+			this.cbAutoTradeGhs.Size = new System.Drawing.Size(128, 23);
+			this.cbAutoTradeGhs.TabIndex = 2;
+			this.cbAutoTradeGhs.Text = "Auto Trade GHS";
+			this.cbAutoTradeGhs.UseVisualStyleBackColor = true;
+			this.cbAutoTradeGhs.CheckedChanged += new System.EventHandler(this.SaveSettings);
 			// 
-			// panel8
+			// pnlNmcTrade
 			// 
-			this.panel8.AutoSize = true;
-			this.panel8.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.panel8.Controls.Add(this.radioButton1);
-			this.panel8.Controls.Add(this.radioButton2);
-			this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel8.Location = new System.Drawing.Point(140, 61);
-			this.panel8.Name = "panel8";
-			this.panel8.Size = new System.Drawing.Size(177, 23);
-			this.panel8.TabIndex = 13;
+			this.pnlNmcTrade.AutoSize = true;
+			this.pnlNmcTrade.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+			this.pnlNmcTrade.Controls.Add(this.rbNmcToBtc);
+			this.pnlNmcTrade.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.pnlNmcTrade.Location = new System.Drawing.Point(137, 75);
+			this.pnlNmcTrade.Name = "pnlNmcTrade";
+			this.pnlNmcTrade.Size = new System.Drawing.Size(182, 23);
+			this.pnlNmcTrade.TabIndex = 13;
 			// 
-			// radioButton1
+			// rbNmcToBtc
 			// 
-			this.radioButton1.AutoSize = true;
-			this.radioButton1.Location = new System.Drawing.Point(87, 3);
-			this.radioButton1.Name = "radioButton1";
-			this.radioButton1.Size = new System.Drawing.Size(85, 17);
-			this.radioButton1.TabIndex = 1;
-			this.radioButton1.TabStop = true;
-			this.radioButton1.Text = "NMC <- BTC";
-			this.radioButton1.UseVisualStyleBackColor = true;
-			this.radioButton1.CheckedChanged += new System.EventHandler(this.SaveSettings);
+			this.rbNmcToBtc.AutoSize = true;
+			this.rbNmcToBtc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.rbNmcToBtc.Location = new System.Drawing.Point(3, 3);
+			this.rbNmcToBtc.Name = "rbNmcToBtc";
+			this.rbNmcToBtc.Size = new System.Drawing.Size(84, 17);
+			this.rbNmcToBtc.TabIndex = 0;
+			this.rbNmcToBtc.TabStop = true;
+			this.rbNmcToBtc.Text = "NMC -> BTC";
+			this.rbNmcToBtc.UseVisualStyleBackColor = true;
+			this.rbNmcToBtc.CheckedChanged += new System.EventHandler(this.rbNmcToBtc_CheckedChanged);
 			// 
-			// radioButton2
+			// pnlGhsTrade
 			// 
-			this.radioButton2.AutoSize = true;
-			this.radioButton2.Location = new System.Drawing.Point(3, 3);
-			this.radioButton2.Name = "radioButton2";
-			this.radioButton2.Size = new System.Drawing.Size(85, 17);
-			this.radioButton2.TabIndex = 0;
-			this.radioButton2.TabStop = true;
-			this.radioButton2.Text = "NMC -> BTC";
-			this.radioButton2.UseVisualStyleBackColor = true;
-			this.radioButton2.CheckedChanged += new System.EventHandler(this.SaveSettings);
+			this.pnlGhsTrade.AutoSize = true;
+			this.pnlGhsTrade.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+			this.pnlGhsTrade.Controls.Add(this.rbGhsToBtc);
+			this.pnlGhsTrade.Controls.Add(this.rbGhsToNmc);
+			this.pnlGhsTrade.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.pnlGhsTrade.Location = new System.Drawing.Point(137, 104);
+			this.pnlGhsTrade.Name = "pnlGhsTrade";
+			this.pnlGhsTrade.Size = new System.Drawing.Size(182, 23);
+			this.pnlGhsTrade.TabIndex = 14;
 			// 
-			// panel9
+			// rbGhsToBtc
 			// 
-			this.panel9.AutoSize = true;
-			this.panel9.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.panel9.Controls.Add(this.radioButton5);
-			this.panel9.Controls.Add(this.radioButton6);
-			this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel9.Location = new System.Drawing.Point(140, 90);
-			this.panel9.Name = "panel9";
-			this.panel9.Size = new System.Drawing.Size(177, 23);
-			this.panel9.TabIndex = 14;
+			this.rbGhsToBtc.AutoSize = true;
+			this.rbGhsToBtc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.rbGhsToBtc.Location = new System.Drawing.Point(90, 3);
+			this.rbGhsToBtc.Name = "rbGhsToBtc";
+			this.rbGhsToBtc.Size = new System.Drawing.Size(83, 17);
+			this.rbGhsToBtc.TabIndex = 1;
+			this.rbGhsToBtc.TabStop = true;
+			this.rbGhsToBtc.Text = "GHS -> BTC";
+			this.rbGhsToBtc.UseVisualStyleBackColor = true;
 			// 
-			// radioButton5
+			// rbGhsToNmc
 			// 
-			this.radioButton5.AutoSize = true;
-			this.radioButton5.Location = new System.Drawing.Point(87, 3);
-			this.radioButton5.Name = "radioButton5";
-			this.radioButton5.Size = new System.Drawing.Size(87, 17);
-			this.radioButton5.TabIndex = 1;
-			this.radioButton5.TabStop = true;
-			this.radioButton5.Text = "GHS <- NMC";
-			this.radioButton5.UseVisualStyleBackColor = true;
-			this.radioButton5.CheckedChanged += new System.EventHandler(this.SaveSettings);
+			this.rbGhsToNmc.AutoSize = true;
+			this.rbGhsToNmc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.rbGhsToNmc.Location = new System.Drawing.Point(3, 3);
+			this.rbGhsToNmc.Name = "rbGhsToNmc";
+			this.rbGhsToNmc.Size = new System.Drawing.Size(86, 17);
+			this.rbGhsToNmc.TabIndex = 0;
+			this.rbGhsToNmc.TabStop = true;
+			this.rbGhsToNmc.Text = "GHS -> NMC";
+			this.rbGhsToNmc.UseVisualStyleBackColor = true;
+			this.rbGhsToNmc.CheckedChanged += new System.EventHandler(this.SaveSettings);
 			// 
-			// radioButton6
+			// pnlIxcTrade
 			// 
-			this.radioButton6.AutoSize = true;
-			this.radioButton6.Location = new System.Drawing.Point(3, 3);
-			this.radioButton6.Name = "radioButton6";
-			this.radioButton6.Size = new System.Drawing.Size(87, 17);
-			this.radioButton6.TabIndex = 0;
-			this.radioButton6.TabStop = true;
-			this.radioButton6.Text = "GHS -> NMC";
-			this.radioButton6.UseVisualStyleBackColor = true;
-			this.radioButton6.CheckedChanged += new System.EventHandler(this.SaveSettings);
+			this.pnlIxcTrade.AutoSize = true;
+			this.pnlIxcTrade.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+			this.pnlIxcTrade.Controls.Add(this.rbIxcToBtc);
+			this.pnlIxcTrade.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.pnlIxcTrade.Location = new System.Drawing.Point(137, 133);
+			this.pnlIxcTrade.Name = "pnlIxcTrade";
+			this.pnlIxcTrade.Size = new System.Drawing.Size(182, 23);
+			this.pnlIxcTrade.TabIndex = 15;
 			// 
-			// panel10
+			// rbIxcToBtc
 			// 
-			this.panel10.AutoSize = true;
-			this.panel10.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.panel10.Controls.Add(this.radioButton7);
-			this.panel10.Controls.Add(this.radioButton8);
-			this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel10.Location = new System.Drawing.Point(140, 119);
-			this.panel10.Name = "panel10";
-			this.panel10.Size = new System.Drawing.Size(177, 23);
-			this.panel10.TabIndex = 15;
-			// 
-			// radioButton7
-			// 
-			this.radioButton7.AutoSize = true;
-			this.radioButton7.Location = new System.Drawing.Point(87, 3);
-			this.radioButton7.Name = "radioButton7";
-			this.radioButton7.Size = new System.Drawing.Size(78, 17);
-			this.radioButton7.TabIndex = 1;
-			this.radioButton7.TabStop = true;
-			this.radioButton7.Text = "IXC <- BTC";
-			this.radioButton7.UseVisualStyleBackColor = true;
-			this.radioButton7.CheckedChanged += new System.EventHandler(this.SaveSettings);
-			// 
-			// radioButton8
-			// 
-			this.radioButton8.AutoSize = true;
-			this.radioButton8.Location = new System.Drawing.Point(3, 3);
-			this.radioButton8.Name = "radioButton8";
-			this.radioButton8.Size = new System.Drawing.Size(78, 17);
-			this.radioButton8.TabIndex = 0;
-			this.radioButton8.TabStop = true;
-			this.radioButton8.Text = "IXC -> BTC";
-			this.radioButton8.UseVisualStyleBackColor = true;
-			this.radioButton8.CheckedChanged += new System.EventHandler(this.SaveSettings);
+			this.rbIxcToBtc.AutoSize = true;
+			this.rbIxcToBtc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.rbIxcToBtc.Location = new System.Drawing.Point(3, 3);
+			this.rbIxcToBtc.Name = "rbIxcToBtc";
+			this.rbIxcToBtc.Size = new System.Drawing.Size(77, 17);
+			this.rbIxcToBtc.TabIndex = 0;
+			this.rbIxcToBtc.TabStop = true;
+			this.rbIxcToBtc.Text = "IXC -> BTC";
+			this.rbIxcToBtc.UseVisualStyleBackColor = true;
+			this.rbIxcToBtc.CheckedChanged += new System.EventHandler(this.SaveSettings);
 			// 
 			// btnSaveSettings
 			// 
@@ -1105,7 +1095,7 @@
 			this.tabPage3.Location = new System.Drawing.Point(4, 22);
 			this.tabPage3.Name = "tabPage3";
 			this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage3.Size = new System.Drawing.Size(595, 373);
+			this.tabPage3.Size = new System.Drawing.Size(834, 538);
 			this.tabPage3.TabIndex = 2;
 			this.tabPage3.Text = "Log";
 			this.tabPage3.UseVisualStyleBackColor = true;
@@ -1115,7 +1105,7 @@
 			this.tabPage4.Location = new System.Drawing.Point(4, 22);
 			this.tabPage4.Name = "tabPage4";
 			this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage4.Size = new System.Drawing.Size(595, 373);
+			this.tabPage4.Size = new System.Drawing.Size(834, 538);
 			this.tabPage4.TabIndex = 3;
 			this.tabPage4.Text = "tabPage4";
 			this.tabPage4.UseVisualStyleBackColor = true;
@@ -1125,56 +1115,72 @@
 			this.tabPage5.Location = new System.Drawing.Point(4, 22);
 			this.tabPage5.Name = "tabPage5";
 			this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage5.Size = new System.Drawing.Size(595, 373);
+			this.tabPage5.Size = new System.Drawing.Size(834, 538);
 			this.tabPage5.TabIndex = 4;
 			this.tabPage5.Text = "tabPage5";
 			this.tabPage5.UseVisualStyleBackColor = true;
 			// 
-			// numericUpDown5
+			// rbBtcToIxc
 			// 
-			this.numericUpDown5.Location = new System.Drawing.Point(403, 288);
-			this.numericUpDown5.Name = "numericUpDown5";
-			this.numericUpDown5.Size = new System.Drawing.Size(120, 20);
-			this.numericUpDown5.TabIndex = 15;
-			this.numericUpDown5.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
+			this.rbBtcToIxc.AutoSize = true;
+			this.rbBtcToIxc.Checked = global::Cex.io.Properties.Settings.Default.btcToIxc;
+			this.rbBtcToIxc.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Cex.io.Properties.Settings.Default, "btcToIxc", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.rbBtcToIxc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.rbBtcToIxc.Location = new System.Drawing.Point(96, 0);
+			this.rbBtcToIxc.Name = "rbBtcToIxc";
+			this.rbBtcToIxc.Size = new System.Drawing.Size(77, 17);
+			this.rbBtcToIxc.TabIndex = 1;
+			this.rbBtcToIxc.TabStop = true;
+			this.rbBtcToIxc.Text = "BTC -> IXC";
+			this.rbBtcToIxc.UseVisualStyleBackColor = true;
+			this.rbBtcToIxc.CheckedChanged += new System.EventHandler(this.rbBtcToIxc_CheckedChanged);
 			// 
-			// label12
+			// rbBtcToLtc
 			// 
-			this.label12.AutoSize = true;
-			this.label12.Location = new System.Drawing.Point(8, 263);
-			this.label12.Name = "label12";
-			this.label12.Size = new System.Drawing.Size(41, 13);
-			this.label12.TabIndex = 16;
-			this.label12.Text = "label12";
+			this.rbBtcToLtc.AutoSize = true;
+			this.rbBtcToLtc.Checked = global::Cex.io.Properties.Settings.Default.btcToLtc;
+			this.rbBtcToLtc.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Cex.io.Properties.Settings.Default, "btcToLtc", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.rbBtcToLtc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.rbBtcToLtc.Location = new System.Drawing.Point(3, 0);
+			this.rbBtcToLtc.Name = "rbBtcToLtc";
+			this.rbBtcToLtc.Size = new System.Drawing.Size(80, 17);
+			this.rbBtcToLtc.TabIndex = 1;
+			this.rbBtcToLtc.TabStop = true;
+			this.rbBtcToLtc.Text = "BTC -> LTC";
+			this.rbBtcToLtc.UseVisualStyleBackColor = true;
+			this.rbBtcToLtc.CheckedChanged += new System.EventHandler(this.rbBtcToLtc_CheckedChanged);
 			// 
-			// progressBar1
+			// udMaintanMinBtcBalance
 			// 
-			this.progressBar1.Location = new System.Drawing.Point(8, 237);
-			this.progressBar1.MarqueeAnimationSpeed = 0;
-			this.progressBar1.Name = "progressBar1";
-			this.progressBar1.Size = new System.Drawing.Size(392, 23);
-			this.progressBar1.TabIndex = 17;
-			// 
-			// udMaintanMinBalance
-			// 
-			this.udMaintanMinBalance.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Cex.io.Properties.Settings.Default, "keepBtcBalance", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.udMaintanMinBalance.DecimalPlaces = 8;
-			this.udMaintanMinBalance.Dock = System.Windows.Forms.DockStyle.Top;
-			this.udMaintanMinBalance.Increment = new decimal(new int[] {
+			this.udMaintanMinBtcBalance.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Cex.io.Properties.Settings.Default, "keepBtcBalance", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.udMaintanMinBtcBalance.DecimalPlaces = 8;
+			this.udMaintanMinBtcBalance.Dock = System.Windows.Forms.DockStyle.Top;
+			this.udMaintanMinBtcBalance.Increment = new decimal(new int[] {
             1,
             0,
             0,
             393216});
-			this.udMaintanMinBalance.Location = new System.Drawing.Point(323, 3);
-			this.udMaintanMinBalance.Name = "udMaintanMinBalance";
-			this.udMaintanMinBalance.Size = new System.Drawing.Size(85, 20);
-			this.udMaintanMinBalance.TabIndex = 9;
-			this.udMaintanMinBalance.Value = global::Cex.io.Properties.Settings.Default.keepBtcBalance;
-			this.udMaintanMinBalance.ValueChanged += new System.EventHandler(this.SaveSettings);
+			this.udMaintanMinBtcBalance.Location = new System.Drawing.Point(325, 3);
+			this.udMaintanMinBtcBalance.Name = "udMaintanMinBtcBalance";
+			this.udMaintanMinBtcBalance.Size = new System.Drawing.Size(85, 20);
+			this.udMaintanMinBtcBalance.TabIndex = 9;
+			this.udMaintanMinBtcBalance.Value = global::Cex.io.Properties.Settings.Default.keepBtcBalance;
+			this.udMaintanMinBtcBalance.ValueChanged += new System.EventHandler(this.SaveSettings);
+			// 
+			// cbAutoTradeBTC
+			// 
+			this.cbAutoTradeBTC.Checked = global::Cex.io.Properties.Settings.Default.autoTradeBtc;
+			this.cbAutoTradeBTC.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Cex.io.Properties.Settings.Default, "autoTradeBtc", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.cbAutoTradeBTC.Dock = System.Windows.Forms.DockStyle.Left;
+			this.cbAutoTradeBTC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.cbAutoTradeBTC.Location = new System.Drawing.Point(0, 0);
+			this.cbAutoTradeBTC.Name = "cbAutoTradeBTC";
+			this.cbAutoTradeBTC.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+			this.cbAutoTradeBTC.Size = new System.Drawing.Size(128, 37);
+			this.cbAutoTradeBTC.TabIndex = 1;
+			this.cbAutoTradeBTC.Text = "Auto Sell BTC";
+			this.cbAutoTradeBTC.UseVisualStyleBackColor = true;
+			this.cbAutoTradeBTC.CheckedChanged += new System.EventHandler(this.SaveSettings);
 			// 
 			// tbApiKey
 			// 
@@ -1209,11 +1215,44 @@
 			this.tbApiUserName.Text = global::Cex.io.Properties.Settings.Default.cexUserName;
 			this.tbApiUserName.TextChanged += new System.EventHandler(this.SaveSettings);
 			// 
+			// lblCurrentDiff
+			// 
+			this.lblCurrentDiff.AutoSize = true;
+			this.lblCurrentDiff.Location = new System.Drawing.Point(3, 52);
+			this.lblCurrentDiff.Name = "lblCurrentDiff";
+			this.lblCurrentDiff.Size = new System.Drawing.Size(96, 13);
+			this.lblCurrentDiff.TabIndex = 29;
+			this.lblCurrentDiff.Text = "Current Difficulty: --";
+			// 
+			// lblCoinsPerDay
+			// 
+			this.lblCoinsPerDay.AutoSize = true;
+			this.lblCoinsPerDay.Location = new System.Drawing.Point(3, 78);
+			this.lblCoinsPerDay.Name = "lblCoinsPerDay";
+			this.lblCoinsPerDay.Size = new System.Drawing.Size(86, 13);
+			this.lblCoinsPerDay.TabIndex = 30;
+			this.lblCoinsPerDay.Text = "Coins Per Day: --";
+			// 
+			// lblHashRate
+			// 
+			this.lblHashRate.AutoSize = true;
+			this.lblHashRate.Location = new System.Drawing.Point(3, 65);
+			this.lblHashRate.Name = "lblHashRate";
+			this.lblHashRate.Size = new System.Drawing.Size(107, 13);
+			this.lblHashRate.TabIndex = 31;
+			this.lblHashRate.Text = "Current Hash Rate: --";
+			// 
+			// timer3
+			// 
+			this.timer3.Enabled = true;
+			this.timer3.Interval = 5000;
+			this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(417, 307);
+			this.ClientSize = new System.Drawing.Size(842, 564);
 			this.Controls.Add(this.tabControl1);
 			this.Controls.Add(this.button2);
 			this.Controls.Add(this.button1);
@@ -1223,6 +1262,7 @@
 			this.tabControl1.ResumeLayout(false);
 			this.tabPage1.ResumeLayout(false);
 			this.tabPage1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
 			this.groupBox4.ResumeLayout(false);
 			this.tableLayoutPanel4.ResumeLayout(false);
 			this.tableLayoutPanel4.PerformLayout();
@@ -1248,27 +1288,26 @@
 			this.panel7.PerformLayout();
 			this.panel5.ResumeLayout(false);
 			this.panel5.PerformLayout();
-			this.panel4.ResumeLayout(false);
-			this.panel4.PerformLayout();
+			this.pnlLtcTrade.ResumeLayout(false);
+			this.pnlLtcTrade.PerformLayout();
 			this.panel3.ResumeLayout(false);
 			this.panel3.PerformLayout();
-			this.panel1.ResumeLayout(false);
-			this.panel1.PerformLayout();
+			this.pnlBtcTrade.ResumeLayout(false);
+			this.pnlBtcTrade.PerformLayout();
 			this.panel2.ResumeLayout(false);
 			this.panel2.PerformLayout();
 			this.panel6.ResumeLayout(false);
 			this.panel6.PerformLayout();
-			this.panel8.ResumeLayout(false);
-			this.panel8.PerformLayout();
-			this.panel9.ResumeLayout(false);
-			this.panel9.PerformLayout();
-			this.panel10.ResumeLayout(false);
-			this.panel10.PerformLayout();
+			this.pnlNmcTrade.ResumeLayout(false);
+			this.pnlNmcTrade.PerformLayout();
+			this.pnlGhsTrade.ResumeLayout(false);
+			this.pnlGhsTrade.PerformLayout();
+			this.pnlIxcTrade.ResumeLayout(false);
+			this.pnlIxcTrade.PerformLayout();
 			this.groupBox5.ResumeLayout(false);
 			this.groupBox5.PerformLayout();
 			this.tabPage3.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.udMaintanMinBalance)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.udMaintanMinBtcBalance)).EndInit();
 			this.ResumeLayout(false);
 
         }
@@ -1316,7 +1355,7 @@
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
 		private System.Windows.Forms.GroupBox groupBox4;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-		private System.Windows.Forms.NumericUpDown udMaintanMinBalance;
+		private System.Windows.Forms.NumericUpDown udMaintanMinBtcBalance;
 		private System.Windows.Forms.GroupBox groupBox5;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.TextBox tbApiKey;
@@ -1327,15 +1366,14 @@
 		private System.Windows.Forms.GroupBox groupBox6;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
 		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.Panel panel1;
-		private System.Windows.Forms.RadioButton btnGhsToBtc;
+		private System.Windows.Forms.Panel pnlBtcTrade;
 		private System.Windows.Forms.Button btnSaveSettings;
-		private System.Windows.Forms.Panel panel4;
-		private System.Windows.Forms.RadioButton radioButton3;
-		private System.Windows.Forms.RadioButton radioButton4;
+		private System.Windows.Forms.Panel pnlLtcTrade;
+		private System.Windows.Forms.RadioButton rbBtcToLtc;
+		private System.Windows.Forms.RadioButton rbLtctoBtc;
 		private System.Windows.Forms.Panel panel3;
-		private System.Windows.Forms.CheckBox checkBox1;
-		private System.Windows.Forms.RadioButton btnBtcToGhs;
+		private System.Windows.Forms.CheckBox cbAutoTradeLtc;
+		private System.Windows.Forms.RadioButton rbBtcToGhs;
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.CheckBox cbAutoTradeBTC;
 		private System.Windows.Forms.NumericUpDown numericUpDown4;
@@ -1343,26 +1381,30 @@
 		private System.Windows.Forms.NumericUpDown numericUpDown2;
 		private System.Windows.Forms.NumericUpDown numericUpDown1;
 		private System.Windows.Forms.Panel panel7;
-		private System.Windows.Forms.CheckBox checkBox4;
+		private System.Windows.Forms.CheckBox cbAutoTradeIxc;
 		private System.Windows.Forms.Panel panel5;
-		private System.Windows.Forms.CheckBox checkBox2;
+		private System.Windows.Forms.CheckBox cbAutoTradeNmc;
 		private System.Windows.Forms.Panel panel6;
-		private System.Windows.Forms.CheckBox checkBox3;
-		private System.Windows.Forms.Panel panel8;
-		private System.Windows.Forms.RadioButton radioButton1;
-		private System.Windows.Forms.RadioButton radioButton2;
-		private System.Windows.Forms.Panel panel9;
-		private System.Windows.Forms.RadioButton radioButton5;
-		private System.Windows.Forms.RadioButton radioButton6;
-		private System.Windows.Forms.Panel panel10;
-		private System.Windows.Forms.RadioButton radioButton7;
-		private System.Windows.Forms.RadioButton radioButton8;
+		private System.Windows.Forms.CheckBox cbAutoTradeGhs;
+		private System.Windows.Forms.Panel pnlNmcTrade;
+		private System.Windows.Forms.RadioButton rbBtcToNmc;
+		private System.Windows.Forms.RadioButton rbNmcToBtc;
+		private System.Windows.Forms.Panel pnlGhsTrade;
+		private System.Windows.Forms.RadioButton rbGhsToNmc;
+		private System.Windows.Forms.Panel pnlIxcTrade;
+		private System.Windows.Forms.RadioButton rbBtcToIxc;
+		private System.Windows.Forms.RadioButton rbIxcToBtc;
 		private System.Windows.Forms.Button button3;
 		private System.Windows.Forms.Label label11;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.NumericUpDown numericUpDown5;
 		private System.Windows.Forms.Label label12;
 		private System.Windows.Forms.ProgressBar progressBar1;
+		private System.Windows.Forms.RadioButton rbGhsToBtc;
+		private System.Windows.Forms.Label lblCurrentDiff;
+		private System.Windows.Forms.Label lblCoinsPerDay;
+		private System.Windows.Forms.Label lblHashRate;
+		private System.Windows.Forms.Timer timer3;
     }
 }
 
