@@ -1,0 +1,9 @@
+C:\CEX\CEX.IO-Automation\ghashIO\bin\Release\ghashIO.exe.config
+C:\CEX\CEX.IO-Automation\ghashIO\bin\Release\ghashIO.exe
+C:\CEX\CEX.IO-Automation\ghashIO\bin\Release\Cex.io.dll
+C:\CEX\CEX.IO-Automation\ghashIO\bin\Release\Cex.io.pdb
+C:\CEX\CEX.IO-Automation\ghashIO\obj\Release\ghashIO.csprojResolveAssemblyReference.cache
+C:\CEX\CEX.IO-Automation\ghashIO\obj\Release\ghashIO.Form1.resources
+C:\CEX\CEX.IO-Automation\ghashIO\obj\Release\ghashIO.Properties.Resources.resources
+C:\CEX\CEX.IO-Automation\ghashIO\obj\Release\ghashIO.csproj.GenerateResource.Cache
+C:\CEX\CEX.IO-Automation\ghashIO\obj\Release\ghashIO.exe

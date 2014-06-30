@@ -1,0 +1,5 @@
+C:\CEX\CEX.IO-Automation\Cex.io\bin\Debug\Cex.io.dll
+C:\CEX\CEX.IO-Automation\Cex.io\bin\Debug\Cex.io.pdb
+C:\CEX\CEX.IO-Automation\Cex.io\obj\Debug\Cex.io.csprojResolveAssemblyReference.cache
+C:\CEX\CEX.IO-Automation\Cex.io\obj\Debug\Cex.io.dll
+C:\CEX\CEX.IO-Automation\Cex.io\obj\Debug\Cex.io.pdb
