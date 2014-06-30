@@ -1,18 +1,18 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ghashIO.Properties" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Cex.io.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="keepBtcBalance" Type="System.Decimal" Scope="Application">
-      <Value Profile="(Default)">0.0000001</Value>
+    <Setting Name="keepBtcBalance" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">0.000001</Value>
     </Setting>
-    <Setting Name="apiUserName" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">get me</Value>
+    <Setting Name="cexUserName" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="apiKey" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">get me</Value>
+    <Setting Name="cexApiKey" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="apiSecret" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">get me</Value>
+    <Setting Name="cexApiSecret" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>
